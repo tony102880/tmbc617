@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>John Doe Photography</h1>
+        <nav>
+            <a href="#gallery">Gallery</a>
+            <a href="#calendar">Calendar</a>
+            <a href="#contact">Contact</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#history">History</a>
+            <a href="#disclaimer">Disclaimer</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="slideshow-container">
+            <!-- Slide images are dynamically added by JavaScript -->
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <section id="calendar">
+        <h2>Schedule</h2>
+        <div id="calendar-container"></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: john.doe@example.com</p>
+    </section>
+
+    <section id="reviews">
+        <h2>Reviews</h2>
+        <div class="review-form">
+            <textarea id="review-text" placeholder="Leave a review..."></textarea>
+            <button onclick="submitReview()">Submit</button>
+        </div>
+        <div id="reviews-list">
+            <!-- Reviews will be appended here -->
+        </div>
+    </section>
+
+    <section id="history">
+        <h2>Brief History of Photography</h2>
+        <p>Photography has evolved from a complex process of capturing images on metal plates in the early 19th century to the sophisticated digital cameras and smartphones we use today. Early pioneers like Joseph Nicéphore Niépce and Louis Daguerre laid the groundwork for modern photography with their innovations in capturing and developing images. The art and science of photography have continued to advance, influencing art, culture, and communication globally.</p>
+    </section>
+
+    <section id="disclaimer">
+        <h2>Disclaimer</h2>
+        <p>The content displayed on this website is for informational purposes only. All images and schedule details are provided as is and may not be representative of all available services. John Doe Photography makes no representations or warranties about the accuracy or completeness of the content provided.</p>
+    </section>
+
+    <section id="login">
+        <h2>Admin Login</h2>
+        <div class="login-form" id="login-form">
+            <input type="text" id="admin-username" placeholder="Username">
+            <input type="password" id="admin-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+        <div class="admin-actions" id="admin-actions" style="display: none;">
+            <h3>Admin Actions</h3>
+            <div class="dropbox" id="dropbox">
+                <p>Drag & Drop Photos Here</p>
+                <input type="file" id="photo-upload" multiple accept="image/*" style="display: none;">
+            </div>
+            <button onclick="openFileDialog()">Select Photos</button>
+            <div class="upload-status" id="upload-status"></div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="hideLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
